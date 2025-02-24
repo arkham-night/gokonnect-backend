@@ -4,9 +4,10 @@
   "description": "GoKonnect Driver-for-hire Booking Platform Backend",
   "main": "dist/app.js",
   "scripts": {
-    "start": "node dist/app.js",
-    "dev": "nodemon src/app.ts",
-    "build": "tsc --skipLibCheck",
+    "prestart": "npm install",
+    "start": "npm run build && node dist/app.js",
+    "dev": "ts-node src/app.ts",
+    "build": "tsc --skipLibCheck --resolveJsonModule",
     "lint": "eslint . --ext .ts",
     "test": "jest",
     "typecheck": "tsc --noEmit"
